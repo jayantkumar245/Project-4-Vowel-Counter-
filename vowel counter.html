@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="vowel counter using javascript">
+    <title>vowel counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h4>vowel counter</h4>
+        <textarea id="textArea" onkeyup="countVowel(this.value)"></textarea>
+        <p>
+            Vowel <span id="vowelCount">0</span>
+        </p>
+    </div>
+
+    <script>
+        let count=document.getElementById('vowelCount');
+        function countVowel(str) {
+            str=str.toLowerCase();
+            let vowelArray=['a','e','i','o','u'],
+            counter=0
+            for(let letter of str){
+                if(vowelArray.includes(letter)){
+                    counter++;
+                }
+            }
+            count.innerHTML=counter
+        }
+    </script>
+</body>
+</html>
